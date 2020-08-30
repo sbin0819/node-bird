@@ -6,7 +6,7 @@ export const initialState = {
         id: 1,
         nickname: 'subin',
       },
-      content: '첫 번째 게시글',
+      content: '첫 번째 게시글 #해시태그 #익스프레스',
       Images: [
         {
           src:
@@ -60,8 +60,8 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
       return {
-        ...state,
         mainPosts: [dummyPost, ...state.mainPosts],
+        ...state,
         postAdded: true,
       };
     default:
