@@ -10,6 +10,7 @@ import UserProfile from './UserProfile';
 const AppLayout = ({ children }) => {
   const { me } = useSelector((state) => state.user);
   return (
+    // eslint-disable-next-line react/jsx-filename-extension
     <div>
       <Menu mode='horizontal'>
         <Menu.Item key='home'>

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Popover, Button, Avatar, List, Comment } from 'antd';
