@@ -1,10 +1,9 @@
 import React, { useCallback, useMemo } from 'react';
 import { Form, Input, Button } from 'antd';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styled from 'styled-components';
-import useInput from '../hooks/useInput';
 import { useDispatch, useSelector } from 'react-redux';
+import useInput from '../hooks/useInput';
 import { loginRequestAction } from '../reducers/user';
 
 const FormWrapper = styled(Form)`
