@@ -41,7 +41,7 @@ const CommentForm = ({ post }) => {
           htmlType='submit'
           loading={addCommentLoading}
         >
-          삐약
+          twit
         </Button>
       </Form.Item>
     </Form>
