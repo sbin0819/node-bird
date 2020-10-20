@@ -1,4 +1,4 @@
-import { all, fork, takeLatest, delay, put } from 'redux-saga/effects';
+import { all, call, fork, takeLatest, delay, put } from 'redux-saga/effects';
 
 import axios from 'axios';
 
@@ -21,17 +21,15 @@ import {
 } from '../reducers/user';
 
 function logInAPI(data) {
-  return axios.post('/api/login', data);
+  return axios.post('/user/login', data);
 }
 
 function* logIn(action) {
   try {
-    // const result = yield call(logInAPI, action.data);
-    yield delay(1000);
+    const result = yield call(logInAPI, action.data);
     yield put({
       type: LOG_IN_SUCCESS,
-      // data: result.data,
-      data: action.data,
+      data: result.data,
     });
   } catch (err) {
     yield put({
@@ -42,7 +40,7 @@ function* logIn(action) {
 }
 
 function logOutAPI() {
-  return axios.post('/api/logout');
+  return axios.post('/user/logout');
 }
 
 function* logOut() {
@@ -61,14 +59,16 @@ function* logOut() {
   }
 }
 
-function signUpAPI() {
-  return axios.post('/api/signup');
+function signUpAPI(data) {
+  console.log(data);
+  return axios.post('/user', data);
 }
 
-function* signUp() {
+function* signUp(action) {
   try {
     yield delay(1000);
-    // const result = yield call(signUpAPI);
+    const result = yield call(signUpAPI, action.data);
+    console.log(result);
     yield put({
       type: SIGN_UP_SUCCESS,
       // data: result.data,
@@ -81,7 +81,7 @@ function* signUp() {
   }
 }
 function followAPI() {
-  return axios.post('/api/follow');
+  return axios.post('/user/follow');
 }
 
 function* follow(action) {
@@ -101,7 +101,7 @@ function* follow(action) {
 }
 
 function unfollowAPI() {
-  return axios.post('/api/unfollow');
+  return axios.post('/user/unfollow');
 }
 
 function* unfollow(action) {

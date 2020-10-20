@@ -1,5 +1,4 @@
 /* eslint-disable no-case-declarations */
-// import { createAction, handleActions } from 'redux-actions';
 import shortId from 'shortid';
 import produce from 'immer';
 import faker from 'faker';
