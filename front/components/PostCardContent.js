@@ -4,8 +4,8 @@ import ProTypes from 'prop-types';
 
 const PostCardContent = ({ postData }) => (
   <div>
-    {/* {postData.content} */}
-    {postData.split(/(#[^\s#]+)/g).map((v, i) => {
+    {postData}
+    {/* {postData.split(/(#[^\s#]+)/g).map((v, i) => {
       if (v.match(/(#[^\s#]+)/g)) {
         return (
           <Link href={`/hashtag/${v.slice(1)}`} key={i}>
@@ -14,7 +14,7 @@ const PostCardContent = ({ postData }) => (
         );
       }
       return v;
-    })}
+    })} */}
   </div>
 );
 
