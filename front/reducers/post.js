@@ -64,13 +64,13 @@ const reducer = (state = initialState, action) =>
         draft.hasMorePost = draft.mainPosts.length < 50;
         break;
       case LOAD_POST_FAILURE:
-        draft.addPostLoading = false;
-        draft.addPostError = action.error;
+        draft.loadPostLoading = false;
+        draft.loadPostError = action.error;
         break;
       case ADD_POST_REQUEST:
-        draft.loadPostLoading = true;
-        draft.loadPostDone = false;
-        draft.loadPostLoading = null;
+        draft.addPostLoading = true;
+        draft.addPostDone = false;
+        draft.addPostLoading = null;
         break;
       case ADD_POST_SUCCESS:
         draft.addPostLoading = false;

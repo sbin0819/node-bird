@@ -11,7 +11,6 @@ router.post('/', isLoggedIn, async (req, res, next) => {
     });
     const fullPost = await Post.findOne({
       where: { id: post.id },
-      attributes: ['id', 'nickname'],
       include: [
         { model: Image },
         { model: Comment },
